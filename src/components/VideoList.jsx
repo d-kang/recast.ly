@@ -3,7 +3,7 @@ var VideoList = (props) => {
     <div className="video-list">
       {
         props.videos.map(function(video) {
-          return <VideoListEntry video={video} />;
+          return <VideoListEntry video={video} changeVideo={props.changeVideo}/>;
         })
       }
     </div>
