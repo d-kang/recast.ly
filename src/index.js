@@ -1,10 +1,4 @@
-// TODO: Render the `App` component to the DOM
-// ReactDOM.render(<App searchYouTube={window.searchYouTube}/>, document.getElementById('app'));
-
-// added script tags
-// <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
-// npm install --save react-router-dom
-// import { BrowserRouter, Match, Router, Route, Link } from 'react-router';
+ReactDOM.render(<App searchYouTube={window.searchYouTube}/>, document.getElementById('app'));
 
 
 // const Router = () => {
@@ -15,14 +9,12 @@
 //   );
 // };
 
-const Router = () => {
-  return (
-    <BrowserRouter>
-      <div>
-        <Match pattern="/" component={App} />
-      </div>
-    </BrowserRouter>
-  );
-};
+// const Router = () => {
+//   return (
+//     <BrowserRouter>
+//         <App searchYouTube={window.searchYouTube}/>
+//     </BrowserRouter>
+//   );
+// };
 
-ReactDOM.render(<Router />, document.getElementById('app'));
+// ReactDOM.render(<Router />, document.getElementById('app'));

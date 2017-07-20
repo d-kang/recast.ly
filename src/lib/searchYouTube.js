@@ -4,6 +4,8 @@ var searchYouTube = (options, callback) => {
     key: options.key,
     q: options.query,
     maxResults: options.max,
+    type: 'video',
+    videoEmbeddable: true,
     part: 'snippet'
   };
   // jQuery fetch
@@ -16,7 +18,9 @@ var searchYouTube = (options, callback) => {
       console.log(data);
       callback(data);
     },
-    error: console.error
+    error: function(data) {
+      console.error(data.responseText);
+    }
   });
 };
 
