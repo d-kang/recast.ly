@@ -11,6 +11,8 @@ class App extends React.Component {
       maxResults: 5,
       key: window.YOUTUBE_API_KEY
     }, this.parseSearchResults.bind(this));
+
+    this.searchYouTube = _.debounce(this.props.searchYouTube, 350);
   }
 
   changeVideo(video) {
@@ -25,7 +27,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav searchYouTube={this.props.searchYouTube} searchCallback={this.parseSearchResults.bind(this)}/>
+        <Nav searchYouTube={this.searchYouTube} searchCallback={this.parseSearchResults.bind(this)}/>
         <div className="col-md-7">
           <VideoPlayer video={this.state.currentVideo} />
         </div>

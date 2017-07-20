@@ -1,6 +1,7 @@
 var Search = (props) => {
   var inputText = '';
-  var search = function() {
+  var search = function(event) {
+    console.log(event);
     // prepare search data
     var data = {
       key: window.YOUTUBE_API_KEY,
@@ -13,7 +14,7 @@ var Search = (props) => {
   // console.log(this.inputText.value)
   return (
     <div className="search-bar form-inline">
-      <input className="form-control" type="text" ref={(input) => inputText = input} />
+      <input className="form-control" type="text" onKeyPress={search} ref={(input) => inputText = input} />
       <button className="btn hidden-sm-down" onClick={search}>
         <span className="glyphicon glyphicon-search"></span>
       </button>
