@@ -1,13 +1,13 @@
 var VideoList = (props) => {
   return (
-    <div>
+    <div className="video-list">
       {
         props.videos.map(function(video) {
-          return <VideoListEntry video={video} />
+          return <VideoListEntry video={video} />;
         })
       }
     </div>
-  )
+  );
 };
 
 // PropTypes tell other developers what `props` a component expects

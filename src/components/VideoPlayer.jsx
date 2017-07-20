@@ -1,11 +1,11 @@
-var VideoPlayer = () => (
+var VideoPlayer = (props) => (
   <div className="video-player">
     <div className="embed-responsive embed-responsive-16by9">
-      <iframe className="embed-responsive-item" src="" allowFullScreen></iframe>
+      <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${props.video ? props.video.id.videoId : null }`} allowFullScreen></iframe>
     </div>
     <div className="video-player-details">
-      <h3>Video Title</h3>
-      <div>Video Description</div>
+      <h3>{props.video ? props.video.snippet.title : 'Sexy badgers'}</h3>
+      <div>{props.video ? props.video.snippet.description : 'Naked mammals'}</div>
     </div>
   </div>
 );
