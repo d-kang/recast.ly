@@ -10,7 +10,7 @@ class App extends React.Component {
       query: 'numberphile',
       maxResults: 5,
       key: window.YOUTUBE_API_KEY
-    }, this.parseSearchResults.bind(this));
+    }, this.searchOnInit.bind(this));
 
     this.searchYouTube = _.debounce(this.props.searchYouTube, 350);
   }
@@ -24,6 +24,11 @@ class App extends React.Component {
     console.log({results: results});
   }
 
+  searchOnInit(results) {
+    this.parseSearchResults(results);
+    this.setState({currentVideo: this.state.videos[0]});
+  }
+
   render() {
     return (
       <div>
@@ -31,7 +36,7 @@ class App extends React.Component {
         <div className="col-md-7">
           <VideoPlayer video={this.state.currentVideo} />
         </div>
-        <div className="col-md-5">
+        <div className="col-md-5" >
           <VideoList videos={this.state.videos} changeVideo={this.changeVideo.bind(this)} />
         </div>
       </div>
